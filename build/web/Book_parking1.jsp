@@ -1,8 +1,4 @@
-<%-- 
-    Document   : User_login
-    Created on : 18 Mar, 2021, 11:09:55 AM
-    Author     : JAVA-JP
---%>
+
 
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.TimeZone"%>
@@ -101,6 +97,8 @@
                             <form  action="slot_booking.jsp" method="post">
 
                                 <%
+                                    
+                                    String loc=request.getParameter("loc");
                                     String pdate = request.getParameter("date");
                                     String stime = request.getParameter("stime");
                                     String phrs = request.getParameter("phrs");

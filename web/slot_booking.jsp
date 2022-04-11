@@ -1,8 +1,4 @@
-<%-- 
-    Document   : DO_login
-    Created on : 9 Mar, 2021, 5:34:14 PM
-    Author     : JAVA-JP
---%>
+
 
 <%@page import="java.util.TimeZone"%>
 <%@page import="java.lang.String"%>
@@ -41,6 +37,7 @@
     Connection con = SQLconnection.getconnection();
     Statement st = con.createStatement();
     Statement st1 = con.createStatement();
+    Statement st2 = con.createStatement();
     try {
         ResultSet rs = st.executeQuery("SELECT * FROM slot_booking WHERE pdate ='" + pdate + "' AND stime = '" + stime + "' AND slot_name = '" + slot_name + "' ");
         if (rs.next() == true) {
@@ -50,9 +47,25 @@
             Date date = new Date();
             String time = dateFormat.format(date);
             System.out.println("Date and Time : " + time);
+            ResultSet rs2 = st2.executeQuery("SELECT count(*) FROM `parking_system`.`slot_booking` where uid = "+ uid + ";");
+            int cnt = 0;
+            Boolean discount = false;
+            while(rs2.next())
+            {
+                cnt = Integer.parseInt(rs2.getString("count(*)"));
+            }
+            if(cnt>=5)
+            {
+                //discount applied
+                discount = true;
+                totalcost = Integer.toString((4*Integer.parseInt(totalcost))/5);
+            }
             int i = st1.executeUpdate("INSERT INTO slot_booking(uname, uid, pdate, stime, phrs, umail, slot_name, time, endtime, pcost) values('" + uname + "','" + uid + "','" + pdate + "','" + stime + "','" + phrs + "','" + umail + "', '" + slot_name + "','" + time + "','"+ etime +"','"+totalcost+"')");
             if (i != 0) {
-                response.sendRedirect("Book_parking.jsp?Slot_booked");
+                if(!discount)
+                    response.sendRedirect("Book_parking.jsp?Slot_booked");
+                else
+                    response.sendRedirect("Book_parking.jsp?Slot_booked_with_discount");
             } else {
                 response.sendRedirect("Book_parking.jsp?Failed");
             }

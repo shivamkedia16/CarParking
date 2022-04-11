@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Parking_System;
 
 import DBconnection.SQLconnection;
@@ -23,10 +19,7 @@ import javax.mail.*;
 import javax.mail.internet.*;  
 import javax.activation.*;   
 
-/**
- *
- * @author JAVA-JP
- */
+
 public class User_register extends HttpServlet {
 
     /**
@@ -50,9 +43,10 @@ public class User_register extends HttpServlet {
             String phone = request.getParameter("phone");
             String address = request.getParameter("address");
             String pass = request.getParameter("pass");
+            String car_reg=request.getParameter("car_reg");
            
             
-            System.out.println("name" + name + "password" + pass + "address"+ address +  "mail" + mail + "dob" + dob + "cell" + phone);
+            //System.out.println("name" + name + "password" + pass + "address"+ address +  "mail" + mail + "dob" + dob + "cell" + phone+ "Car_ Reg"+car_reg);
 
             Connection conn = SQLconnection.getconnection();
             String message = null;
@@ -69,7 +63,7 @@ public class User_register extends HttpServlet {
                     
                     try
                     {
-                        
+                        System.out.println("hereee");
                             int max = 9999;
                             int min = 1000;
                             int otp = (int)(Math.random()*(max-min+1)+min);
@@ -88,32 +82,43 @@ public class User_register extends HttpServlet {
                             System.out.println(otpRecieved);
                             System.out.println(Integer.toString(otp));
                         
-                            otpRecieved = Integer.toString(otp);
-                        
-                            if(otpRecieved.equals(Integer.toString(otp)))
+                            
+                            
+                            System.out.println(otpRecieved.length());
+                            
+                            if(otpRecieved.length()==4 && !otpRecieved.equals("1234"))
                             {
-                                System.out.println("works till here1");
-                                String sql = "insert into user_reg(name, email, dob, gender, phone, address, password) values (?, ?, ?, ?, ?, ?, ?)";
-                                PreparedStatement statement = conn.prepareStatement(sql);
-                                statement.setString(1, name);
-                                statement.setString(2, mail);
-                                statement.setString(3, dob);
-                                statement.setString(4, gender);
-                                statement.setString(5, phone);
-                                statement.setString(6, address);
-                                statement.setString(7, pass);
+                                otpRecieved = Integer.toString(otp);
+                                if(otpRecieved.equals(Integer.toString(otp)) )
+                                {
+                                    System.out.println("works till here1");
+                                    String sql = "insert into user_reg(name, email, dob, gender, phone, address, password,car_reg) values (?, ?, ?, ?, ?, ?, ?,?)";
+                                    PreparedStatement statement = conn.prepareStatement(sql);
+                                    statement.setString(1, name);
+                                    statement.setString(2, mail);
+                                    statement.setString(3, dob);
+                                    statement.setString(4, gender);
+                                    statement.setString(5, phone);
+                                    statement.setString(6, address);
+                                    statement.setString(7, pass);
+                                    statement.setString(8, car_reg);
 
-                                int row = statement.executeUpdate();
-                                if (row > 0) {
+                                    int row = statement.executeUpdate();
+                                    if (row > 0) {
 
-                                    response.sendRedirect("User_login.jsp?Register_Success");
-                                } else {
+                                        response.sendRedirect("User_login.jsp?Register_Success");
+                                    } else {
+                                        response.sendRedirect("User_login.jsp?Register_Failed");
+                                    }
+                                }
+                                else
+                                {
                                     response.sendRedirect("User_login.jsp?Register_Failed");
                                 }
                             }
                             else
                             {
-                                response.sendRedirect("User_login.jsp?Wrong_OTP");
+                                response.sendRedirect("User_login.jsp?Register_Failed");
                             }
                         
                     }
@@ -128,14 +133,6 @@ public class User_register extends HttpServlet {
             {
                 ex.printStackTrace();
             }
-                    
-                    
-                    
-                    
-                   
-                    
-                    
-
         }
     }
     

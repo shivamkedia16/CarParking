@@ -1,8 +1,3 @@
-<%-- 
-    Document   : set_attribute
-    Created on : Sep 29, 2020, 2:15:45 PM
-    Author     : Lenovo
---%>
 
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.util.Date"%>

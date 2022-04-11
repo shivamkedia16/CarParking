@@ -1,8 +1,3 @@
-<%-- 
-    Document   : User_login
-    Created on : 18 Mar, 2021, 11:09:55 AM
-    Author     : JAVA-JP
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
@@ -71,7 +66,7 @@
                 <aside id="colorlib-hero" class="js-fullheight">
                     <div class="flexslider js-fullheight">
                         <ul class="slides">
-                            <li style="background-image: url(images/img1.jpg);">
+                            <li style="background-image: url(images/i1.jpg);">
                                 <div class="overlay"></div>
                                 <div class="container-fluid">
                                     <div class="row">
@@ -83,7 +78,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li style="background-image: url(images/img2.jpg);">
+                            <li style="background-image: url(images/i2.jpg);">
                                 <div class="overlay"></div>
                                 <div class="container-fluid">
                                     <div class="row">
@@ -95,7 +90,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li style="background-image: url(images/img3.jpg);">
+<!--                            <li style="background-image: url(images/img3.jpg);">
                                 <div class="overlay"></div>
                                 <div class="container-fluid">
                                     <div class="row">
@@ -106,7 +101,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </li>
+                            </li>-->
                         </ul>
                     </div>
                 </aside>

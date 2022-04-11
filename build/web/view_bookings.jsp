@@ -1,8 +1,4 @@
-<%-- 
-    Document   : User_login
-    Created on : 18 Mar, 2021, 11:09:55 AM
-    Author     : JAVA-JP
---%>
+
 
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -84,7 +80,9 @@
                         <li><a href="Admin_Home.jsp">Home</a></li>
                         <li><a href="parking_cost.jsp">Parking Cost</a></li>
                         <li><a href="user_details.jsp">User Details</a></li>
+                        <li><a href="worker_details.jsp">Worker Details</a></li>
                         <li class="colorlib-active"><a href="view_bookings.jsp">View Bookings</a></li>
+                        <li><a href="managespaces.jsp">Manage Parkings</a></li>
                         <li><a href="index.html">Logout</a></li>
                     </ul>
                 </nav>

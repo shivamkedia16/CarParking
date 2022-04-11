@@ -1,8 +1,3 @@
-<%-- 
-    Document   : User_login
-    Created on : 18 Mar, 2021, 11:09:55 AM
-    Author     : JAVA-JP
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
@@ -61,6 +56,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="User_login.jsp">User</a></li>
+                        <li><a href="Worker_login.jsp">Worker</a></li>
                         <li class="colorlib-active"><a href="Admin_login.jsp">Admin</a></li>
                     </ul>
                 </nav>
@@ -76,10 +72,8 @@
                         <div class="row">
                             <center><h2>Admin Login</h2></center>
                             <br><br>
-                            <div class="col-md-5">
-                                <img src="images/userlogin.jpg" width="400" height="400" />
-                            </div>
-                            <div class="col-md-7 col-md-push-1">
+                            
+                            <div class="col-md-11 col-md-push-1">
                                 <div class="row">
                                     <div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInLeft">
                                         <form  action="admin" method="post">

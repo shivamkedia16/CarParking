@@ -1,8 +1,3 @@
-<%-- 
-    Document   : User_login
-    Created on : 18 Mar, 2021, 11:09:55 AM
-    Author     : JAVA-JP
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
@@ -62,7 +57,9 @@
                         <li class="colorlib-active"><a href="Admin_Home.jsp">Home</a></li>
                         <li><a href="parking_cost.jsp">Parking Cost</a></li>
                         <li><a href="user_details.jsp">User Details</a></li>
+                        <li><a href="worker_details.jsp">Worker Details</a></li>
                         <li><a href="view_bookings.jsp">View Bookings</a></li>
+                        <li><a href="managespaces.jsp">Manage Parkings</a></li>
                         <li><a href="index.html">Logout</a></li>
                     </ul>
                 </nav>
@@ -71,7 +68,7 @@
                 <aside id="colorlib-hero" class="js-fullheight">
                     <div class="flexslider js-fullheight">
                         <ul class="slides">
-                            <li style="background-image: url(images/img1.jpg);">
+                            <li style="background-image: url(images/i1.jpg);">
                                 <div class="overlay"></div>
                                 <div class="container-fluid">
                                     <div class="row">
@@ -83,7 +80,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li style="background-image: url(images/img2.jpg);">
+                            <li style="background-image: url(images/i2.jpg);">
                                 <div class="overlay"></div>
                                 <div class="container-fluid">
                                     <div class="row">
@@ -95,7 +92,7 @@
                                     </div>
                                 </div>
                             </li>
-                            <li style="background-image: url(images/img3.jpg);">
+<!--                            <li style="background-image: url(images/img3.jpg);">
                                 <div class="overlay"></div>
                                 <div class="container-fluid">
                                     <div class="row">
@@ -106,7 +103,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </li>
+                            </li>-->
                         </ul>
                     </div>
                 </aside>

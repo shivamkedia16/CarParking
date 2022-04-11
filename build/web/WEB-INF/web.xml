@@ -23,6 +23,32 @@
         <url-pattern>/admin</url-pattern>
     </servlet-mapping>
     
+     <servlet>
+        <servlet-name>Workers</servlet-name>
+        <servlet-class>Parking_System.Worker_Add</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Workers</servlet-name>
+        <url-pattern>/add_worker</url-pattern>
+    </servlet-mapping>
+     <servlet>
+        <servlet-name>EditWorkers</servlet-name>
+        <servlet-class>Parking_System.Worker_edit</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditWorkers</servlet-name>
+        <url-pattern>/Worker_edit</url-pattern>
+    </servlet-mapping>
+   <servlet>
+        <servlet-name>Space_Add</servlet-name>
+        <servlet-class>Parking_System.AddSpace</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Space_Add</servlet-name>
+        <url-pattern>/add_space</url-pattern>
+    </servlet-mapping>
+   
+    
     <session-config>
         <session-timeout>
             30

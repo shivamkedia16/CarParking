@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Parking_System;
 
 import java.io.IOException;
@@ -12,10 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author JAVA-JP
- */
+
 public class Admin_login extends HttpServlet {
 
     /**
@@ -35,7 +28,7 @@ public class Admin_login extends HttpServlet {
             String name = request.getParameter("name");
             String pass = request.getParameter("pass");
             System.out.println("=======================================" +name +pass);
-            if (name.equalsIgnoreCase("admin") && pass.equalsIgnoreCase("admisn")) {
+            if (name.equalsIgnoreCase("admin") && pass.equalsIgnoreCase("admin")) {
                 response.sendRedirect("Admin_Home.jsp?Success");
             } else {
                 response.sendRedirect("Admin_login.jsp?Failed");

@@ -1,8 +1,3 @@
-<%-- 
-    Document   : User_login
-    Created on : 18 Mar, 2021, 11:09:55 AM
-    Author     : JAVA-JP
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
@@ -70,11 +65,8 @@
                         <div class="row">
                             <center><h2>User Register</h2></center>
                             <br><br>
-                            <div class="col-md-5">
-                                <br><br><br><br>
-                                <img src="images/register.jpg" width="400" height="500" />
-                            </div>
-                            <div class="col-md-7 col-md-push-1">
+                           
+                            <div class="col-md-11 col-md-push-1">
                                 <div class="row">
                                     <div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInLeft">
                                         <form action="user_reg" method="post">
@@ -85,6 +77,10 @@
                                             <div class="form-group">
                                                 &nbsp;&nbsp;<label>DOB :</label>
                                                 <input type="date" class="form-control" name="dob" required="required">
+                                            </div>
+                                            <div class="form-group">
+                                                &nbsp;&nbsp;<label>Car Registration Number:</label>
+                                                <input type="text" class="form-control" name="car_reg" placeholder="Car registartion Number" required="required">
                                             </div>
                                             <div class="form-group">
                                                 &nbsp;&nbsp;<label>Email ID :</label>

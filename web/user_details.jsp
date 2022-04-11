@@ -1,8 +1,4 @@
-<%-- 
-    Document   : User_login
-    Created on : 18 Mar, 2021, 11:09:55 AM
-    Author     : JAVA-JP
---%>
+
 
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -84,7 +80,9 @@
                         <li><a href="Admin_Home.jsp">Home</a></li>
                         <li><a href="parking_cost.jsp">Parking Cost</a></li>
                         <li class="colorlib-active"><a href="user_details.jsp">User Details</a></li>
+                        <li><a href="worker_details.jsp">Worker Details</a></li>
                         <li><a href="view_bookings.jsp">View Bookings</a></li>
+                        <li><a href="managespaces.jsp">Manage Parkings</a></li>
                         <li><a href="index.html">Logout</a></li>
                     </ul>
                 </nav>
@@ -106,6 +104,7 @@
                                         <th>User ID </th>
                                         <th>Name </th>
                                         <th>Email </th>
+                                        <th>Car Registration No.</th>
                                         <th>DOB</th>
                                         <th>Address</th>
                                         <th>Gender</th>
@@ -122,6 +121,7 @@
                                         <td><%=rs.getString("id")%></td>
                                         <td><%=rs.getString("name")%></td>
                                         <td><%=rs.getString("email")%></td>
+                                        <td><%=rs.getString("car_reg")%></td>
                                         <td><%=rs.getString("dob")%></td>
                                         <td><%=rs.getString("address")%></td>
                                         <td><%=rs.getString("gender")%></td>

@@ -1,8 +1,3 @@
-<%-- 
-    Document   : User_login
-    Created on : 18 Mar, 2021, 11:09:55 AM
-    Author     : JAVA-JP
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
@@ -47,9 +42,9 @@
         <script src="js/modernizr-2.6.2.min.js"></script>
     </head>
     <%
-        if (request.getParameter("Failed") != null) {
+        if (request.getParameter("Register_Failed") != null) {
     %>
-    <script>alert('Login Failed');</script>
+    <script>alert('Wrong OTP');</script>
     <%            }
     %>
     <%
@@ -67,6 +62,7 @@
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li class="colorlib-active"><a href="User_login.jsp">User</a></li>
+                        <li><a href="Worker_login.jsp">Worker</a></li>
                         <li><a href="Admin_login.jsp">Admin</a></li>
                     </ul>
                 </nav>
@@ -74,18 +70,23 @@
             <div id="colorlib-main">
                 <div class="colorlib-contact">
                     <div class="colorlib-narrow-content">
-                        <div class="row">
-                            <div class="col-md-12 animate-box" data-animate-effect="fadeInLeft">
-                                <h2 class="colorlib-heading">Online parking Booking System</h2>
+                        <div class="">
+                            <div class="col-md-12 " data-animate-effect="fadeInLeft">
+                                <h2 class="colorlib-heading">Login to book your parking</h2>
+                                <hr>
                             </div>
                         </div>
                         <div class="row">
                             <center><h2>User Login</h2></center>
                             <br><br>
+                            
+                            
                             <div class="col-md-5">
-                                <img src="images/userlogin.jpg" width="400" height="400" />
+<!--                                <img src="images/userlogin.jpg" width="400" height="400" />-->
                             </div>
-                            <div class="col-md-7 col-md-push-1">
+                            
+                            
+                            <div class="col-md-11 col-md-push-1">
                                 <div class="row">
                                     <div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInLeft">
                                         <form  action="user_signin.jsp" method="post">
@@ -97,9 +98,9 @@
                                                 &nbsp;&nbsp;<label>Password :</label>
                                                 <input type="password" class="form-control" name="pass" placeholder="Enter Your Password" required="required"><br>
                                             </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn btn-success btn-md">Login</button>&nbsp;&nbsp;&nbsp;&nbsp;
-                                                <a href="user_signup.jsp" class="btn btn-info btn-md">Register!</a>
+                                            <div class="form-group btn-container">
+                                                <button type="submit" class="btn btn-success btn-md">LOGIN</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <a href="user_signup.jsp" class="btn btn-success btn-md">REGISTER</a>
                                             </div>
                                         </form>
                                     </div>

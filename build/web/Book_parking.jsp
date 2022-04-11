@@ -1,10 +1,10 @@
-<%-- 
-    Document   : User_login
-    Created on : 18 Mar, 2021, 11:09:55 AM
-    Author     : JAVA-JP
---%>
-
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="DBconnection.SQLconnection"%>
+<%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -60,6 +60,12 @@
         if (request.getParameter("Slot_booked") != null) {
     %>
     <script>alert('Slot Booked');</script>
+    <%            }
+    %>
+    <%
+        if (request.getParameter("Slot_booked_with_discount") != null) {
+    %>
+    <script>alert('As you are a regular customer, promocode of 20% discount applied for you');</script>
     <%            }
     %>
     <script>
@@ -151,8 +157,22 @@
                             <div class="col-md-6 col-md-push-2">
                                 <div class="row">
                                     <div class="col-md-10 col-md-offset-1 col-md-pull-1 animate-box" data-animate-effect="fadeInLeft">
-                                        <form  action="Book_parking1.jsp" method="post">
-                                            <div class="form-group">
+                                        <form  action="Book_P.jsp" method="post">
+                                             <div class="form-group">
+                                                &nbsp;&nbsp;<label>Select Parking Location :</label>
+                                                <select name="loc" required="required" class="form-control">
+                                                    <option value="">--Select Location--</option>
+                                                    <%Connection con = SQLconnection.getconnection();
+                                                    Statement st = con.createStatement();
+                                                 
+                                                      ResultSet rs = st.executeQuery("SELECT * FROM spaces ");
+                                                        while (rs.next()) {
+                                                         %>
+                                                    <option><%=rs.getString("location")%></option>
+                                                       <%}%>
+                                                </select>
+                                            </div>
+                                            <div class="form-group"> 
                                                 &nbsp;&nbsp;<label>Select Date :</label>
                                                 <input type="date" class="form-control" name="date" id="date" required="required">
                                             </div>
